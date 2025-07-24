@@ -20,3 +20,12 @@ function returnSum(num1 :number, num2 :number):number {
 }
 
 // we can set types inside the arguments and what type the function will return
+
+// the function can be just void
+
+
+function showSum(num1 :number, num2 :number):void {
+    console.log(num1+num2)
+}
+
+showSum(1,5);

@@ -13,3 +13,10 @@ console.log(
     friends,
     anyType
 )
+
+
+function returnSum(num1 :number, num2 :number):number {
+    return num1 + num2;
+}
+
+// we can set types inside the arguments and what type the function will return

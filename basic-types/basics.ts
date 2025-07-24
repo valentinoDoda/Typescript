@@ -76,3 +76,27 @@ processCart({
   userId: "user123",
   items: ["item1", "item2", "item3"],
 });
+
+type Ingredients = {
+  name : string,
+  quantity : string
+}
+
+type Recipe = {
+  title: string,
+  ingredients : Ingredients[],
+  instructions: string,
+};
+
+const processRecipe = (recipe: Recipe):void => {
+  console.log(recipe)
+};
+
+processRecipe({
+  title: "Chocolate Chip Cookies",
+  ingredients: [
+    { name: "Flour", quantity: "2 cups" },
+    { name: "Sugar", quantity: "1 cup" },
+  ],
+  instructions: "...",
+});

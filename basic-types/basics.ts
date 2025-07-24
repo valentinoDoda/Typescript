@@ -29,3 +29,18 @@ function showSum(num1 :number, num2 :number):void {
 }
 
 showSum(1,5);
+
+const concatName = (first: string, last?: string) => {
+  if (!last) {
+    return first;
+  }
+
+  return `${first} ${last}`;
+};
+
+const result = concatName("John", "Doe");
+const result2 = concatName("John");
+
+console.log(result2, result)
+
+// the optional argument tells that the value should me string or undefined

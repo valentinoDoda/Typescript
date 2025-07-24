@@ -100,3 +100,14 @@ processRecipe({
   ],
   instructions: "...",
 });
+
+
+
+function concatenate( age: number , ...args : string[]):string { //with the rest parameters we take all the parameters of function
+  return ` ${age} ${args.join("")}`;
+}
+
+const result5 = concatenate(31,"Hello", " ", "World");
+
+
+console.log(result5)

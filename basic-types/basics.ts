@@ -31,7 +31,6 @@ function showSum(num1 :number, num2 :number):void {
 showSum(1,5);
 
 const concatName = (first: string, last: string = "Doda") => {
-
   return `${first} ${last}`;
 };
 
@@ -41,3 +40,15 @@ const result2 = concatName("John");
 console.log(result2, result)
 
 // the optional argument tells that the value should me string or undefined
+
+
+const concatName2 = (user: {first : string, last : string}) :string => {
+  return `${user.first} ${user.last}`;
+};
+
+const result3 = concatName2({
+    first: "John",
+    last: "Doe",
+})
+
+console.log(result3)

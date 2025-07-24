@@ -57,3 +57,22 @@ const result3 = concatName2({
 })
 
 console.log(result3)
+
+
+
+// How do we type 'items' in the ShoppingCart?
+type ShoppingCart = {
+  userId: string;
+  items: string[]
+};
+
+// TESTS
+
+const processCart = (cart: ShoppingCart):void => {
+  console.log(cart.userId, ...cart.items);
+};
+
+processCart({
+  userId: "user123",
+  items: ["item1", "item2", "item3"],
+});

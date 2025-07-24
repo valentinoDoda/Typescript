@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.markmap-dark {
+  background: #27272a;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script><script>(()=>{setTimeout(()=>{const{markmap:S,mm:Q}=window,$=new S.Toolbar;$.attach(Q);const I=$.render();I.setAttribute("style","position:absolute;bottom:20px;right:20px"),document.body.append(I)})})()</script><script>((l,U,M,R)=>{const N=l();window.mm=N.Markmap.create("svg#mindmap",(U||N.deriveOptions)(R),M),window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("markmap-dark")})(()=>window.markmap,null,{"content":"Basic Types in TypeScript for Beginners","children":[{"content":"1. <code>number</code>","children":[{"content":"This type is used for <strong>all numbers</strong>, whether they are integers (e.g., <code>10</code>) or decimals (e.g., <code>3.14</code>).","children":[{"content":"<pre data-lines=\"18,22\"><code class=\"language-typescript\"><span class=\"hljs-keyword\">let</span> <span class=\"hljs-attr\">age</span>: <span class=\"hljs-built_in\">number</span> = <span class=\"hljs-number\">30</span>; <span class=\"hljs-comment\">// Integer</span>\n<span class=\"hljs-keyword\">let</span> <span class=\"hljs-attr\">price</span>: <span class=\"hljs-built_in\">number</span> = <span class=\"hljs-number\">19.99</span>; <span class=\"hljs-comment\">// Decimal number</span>\n</code></pre>","children":[],"payload":{"tag":"pre","lines":"18,22"}}],"payload":{"tag":"h3","lines":"14,15"}}],"payload":{"tag":"h2","lines":"12,13"}},{"content":"2. <code>string</code>","children":[{"content":"The <code>string</code> type is used for <strong>any text</strong>.","children":[{"content":"<pre data-lines=\"31,35\"><code class=\"language-typescript\"><span class=\"hljs-keyword\">let</span> <span class=\"hljs-attr\">firstName</span>: <span class=\"hljs-built_in\">string</span> = <span class=\"hljs-string\">&quot;Maria&quot;</span>; <span class=\"hljs-comment\">// Text in double quotes</span>\n<span class=\"hljs-keyword\">let</span> <span class=\"hljs-attr\">greetingMessage</span>: <span class=\"hljs-built_in\">string</span> = <span class=\"hljs-string\">`Hello, <span class=\"hljs-subst\">&#x24;{firstName}</span>!`</span>; <span class=\"hljs-comment\">// Text using backticks (template literals)</span>\n</code></pre>","children":[],"payload":{"tag":"pre","lines":"31,35"}}],"payload":{"tag":"h3","lines":"27,28"}}],"payload":{"tag":"h2","lines":"25,26"}},{"content":"3. <code>boolean</code>","children":[{"content":"This type can only take two values: <strong><code>true</code> or <code>false</code></strong>.","children":[{"content":"<pre data-lines=\"44,48\"><code class=\"language-typescript\"><span class=\"hljs-keyword\">let</span> <span class=\"hljs-attr\">isActive</span>: <span class=\"hljs-built_in\">boolean</span> = <span class=\"hljs-literal\">true</span>; <span class=\"hljs-comment\">// True value</span>\n<span class=\"hljs-keyword\">let</span> <span class=\"hljs-attr\">hasPermission</span>: <span class=\"hljs-built_in\">boolean</span> = <span class=\"hljs-literal\">false</span>; <span class=\"hljs-comment\">// False value</span>\n</code></pre>","children":[],"payload":{"tag":"pre","lines":"44,48"}}],"payload":{"tag":"h3","lines":"40,41"}}],"payload":{"tag":"h2","lines":"38,39"}},{"content":"4. <code>array</code>","children":[{"content":"Arrays contain <strong>lists of data</strong>. You can declare the <strong>type of elements</strong> the array will contain.","children":[{"content":"<pre data-lines=\"57,64\"><code class=\"language-typescript\"><span class=\"hljs-comment\">// An array that contains only numbers</span>\n<span class=\"hljs-keyword\">let</span> <span class=\"hljs-attr\">numbers</span>: <span class=\"hljs-built_in\">number</span>[] = [<span class=\"hljs-number\">1</span>, <span class=\"hljs-number\">2</span>, <span class=\"hljs-number\">3</span>, <span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">5</span>];\n\n<span class=\"hljs-comment\">// An array that contains only strings (text)</span>\n<span class=\"hljs-keyword\">let</span> <span class=\"hljs-attr\">names</span>: <span class=\"hljs-built_in\">string</span>[] = [<span class=\"hljs-string\">&quot;Alexander&quot;</span>, <span class=\"hljs-string\">&quot;Vasiliki&quot;</span>, <span class=\"hljs-string\">&quot;George&quot;</span>];\n</code></pre>","children":[],"payload":{"tag":"pre","lines":"57,64"}}],"payload":{"tag":"h3","lines":"53,54"}}],"payload":{"tag":"h2","lines":"51,52"}},{"content":"5. <code>any</code>","children":[{"content":"The <code>any</code> type is like telling TypeScript: &quot;<strong>I don&apos;t care about the type</strong>&quot;. When you use <code>any</code>, TypeScript doesn&apos;t check the variable&apos;s type. It&apos;s typically used when you genuinely <strong>don&apos;t know what data type</strong> a variable will have (e.g., data coming from an API).","children":[{"content":"<pre data-lines=\"78,83\"><code class=\"language-typescript\"><span class=\"hljs-keyword\">let</span> <span class=\"hljs-attr\">unknownValue</span>: <span class=\"hljs-built_in\">any</span> = <span class=\"hljs-string\">&quot;Can be text&quot;</span>; <span class=\"hljs-comment\">// Initially string</span>\nunknownValue = <span class=\"hljs-number\">10</span>; <span class=\"hljs-comment\">// Later can become a number</span>\nunknownValue = <span class=\"hljs-literal\">true</span>; <span class=\"hljs-comment\">// Or even a boolean</span>\n</code></pre>","children":[],"payload":{"tag":"pre","lines":"78,83"}}],"payload":{"tag":"h3","lines":"72,73"}}],"payload":{"tag":"h2","lines":"70,71"}}],"payload":{"tag":"h1","lines":"4,5"}},null)</script>
+</body>
+</html>

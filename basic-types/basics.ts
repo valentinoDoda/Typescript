@@ -30,10 +30,7 @@ function showSum(num1 :number, num2 :number):void {
 
 showSum(1,5);
 
-const concatName = (first: string, last?: string) => {
-  if (!last) {
-    return first;
-  }
+const concatName = (first: string, last: string = "Doda") => {
 
   return `${first} ${last}`;
 };

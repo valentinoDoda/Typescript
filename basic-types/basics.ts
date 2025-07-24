@@ -42,7 +42,12 @@ console.log(result2, result)
 // the optional argument tells that the value should me string or undefined
 
 
-const concatName2 = (user: {first : string, last : string}) :string => {
+type User = {
+    first: string,
+    last: string,
+}
+
+const concatName2 = (user: User) :string => {
   return `${user.first} ${user.last}`;
 };
 

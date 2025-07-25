@@ -29,3 +29,11 @@ const handleAllCase = (code) => {
 handleAllCase("400");
 handleSuccessCase("201");
 handleErrorCase("404");
+function validateUsername(username) {
+    // Rewrite this function to make the error go away
+    if (username) {
+        return username.length > 5;
+    }
+    return false;
+}
+//Narrowing in TypeScript is the process of refining a variable's type from a broader union (e.g. string | number) to a more specific type based on runtime checks

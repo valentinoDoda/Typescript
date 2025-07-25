@@ -12,3 +12,16 @@ const result = getUsername("Alice");
 const result2 = getUsername(null);
 
 console.log(result, result2)
+
+
+type Direction = "up" | "left" | "down" | "top"
+
+
+function move(direction: Direction, distance: number):void {
+    console.log(direction, distance);
+}
+
+// TESTS
+
+move("up", 10);
+move("left", 5);

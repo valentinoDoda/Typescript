@@ -11,3 +11,9 @@ function getUsername(username) {
 const result = getUsername("Alice");
 const result2 = getUsername(null);
 console.log(result, result2);
+function move(direction, distance) {
+    console.log(direction, distance);
+}
+// TESTS
+move("up", 10);
+move("left", 5);

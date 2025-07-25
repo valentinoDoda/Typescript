@@ -17,3 +17,15 @@ function move(direction, distance) {
 // TESTS
 move("up", 10);
 move("left", 5);
+const handleErrorCase = (code) => {
+    console.log(code);
+};
+const handleSuccessCase = (code) => {
+    console.log(code);
+};
+const handleAllCase = (code) => {
+    console.log(code);
+};
+handleAllCase("400");
+handleSuccessCase("201");
+handleErrorCase("404");

@@ -53,3 +53,23 @@ function validateUsername(username: string | null): boolean {
 }
 
 //Narrowing in TypeScript is the process of refining a variable's type from a broader union (e.g. string | number) to a more specific type based on runtime checks
+
+
+type APIResponse =
+  | {
+      data: {
+        id: string;
+      };
+    }
+  | {
+      error: string;
+    };
+
+const handleResponse = (response: APIResponse) => {
+  // How do we check if 'data' is in the response?
+  if ("data" in response) {
+    return response.data.id;
+  } else {
+    throw new Error(response.error);
+  }
+};

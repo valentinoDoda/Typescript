@@ -8,11 +8,21 @@
 //     [sub : string] : number;
 // }
 
-const scores: Record<string, number> = {};
+interface Scores {
+  [sub : string] : number;
+  math: number;
+  english: number;
+  science : number
 
-scores.math = 95;
-scores.english = 90;
-scores.science = 85;
+}
+
+const scores: Scores = {
+    
+math : 95,
+english : 90,
+science : 85
+
+};
 
 
 //Challenge: Your challenge is to determine the correct typing for this Scores interface that will specify the default keys, as well as allow for any other string key to be added to it.

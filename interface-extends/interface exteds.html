@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.markmap-dark {
+  background: #27272a;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script><script>(()=>{setTimeout(()=>{const{markmap:S,mm:Q}=window,$=new S.Toolbar;$.attach(Q);const I=$.render();I.setAttribute("style","position:absolute;bottom:20px;right:20px"),document.body.append(I)})})()</script><script>((l,U,M,R)=>{const N=l();window.mm=N.Markmap.create("svg#mindmap",(U||N.deriveOptions)(R),M),window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("markmap-dark")})(()=>window.markmap,null,{"content":"Extend an Object Using Interfaces in TypeScript","children":[{"content":"<strong>Introduction</strong>","children":[{"content":"<strong>Goal:</strong> Extend objects in TypeScript cleaner and more effectively.","children":[],"payload":{"tag":"li","lines":"6,7"}},{"content":"<strong>Method:</strong> Using <code>interfaces</code> with <code>extends</code> instead of intersection types (<code>&amp;</code>).","children":[],"payload":{"tag":"li","lines":"7,9"}}],"payload":{"tag":"h2","lines":"4,5"}},{"content":"<strong>Initial Scenario (Using <code>&amp;</code>)</strong>","children":[{"content":"\n<p data-lines=\"13,14\"><strong>Problem:</strong> Code repetition for common properties.</p>","children":[{"content":"<strong>Example:</strong> <code>User</code> and <code>Product</code> types both contain <code>id</code> and <code>createdAt</code>.","children":[],"payload":{"tag":"li","lines":"14,15"}}],"payload":{"tag":"li","lines":"13,15"}},{"content":"\n<p data-lines=\"15,16\"><strong>Previous Solution:</strong> <code>&amp;</code> operator to combine types.TypeScript</p>\n<pre data-lines=\"17,32\"><code class=\"language-type\">   id: string;\n   createdAt: Date;\n };\n \n type User = {\n   name: string;\n   email: string;\n } &amp; BaseEntity; // Extended via &amp;\n \n type Product = {\n   name: string;\n   price: number;\n } &amp; BaseEntity; // Extended via &amp;```\n \n</code></pre>","children":[],"payload":{"tag":"li","lines":"15,32"}},{"content":"\n<p data-lines=\"32,33\"><strong>Limitation of <code>&amp;</code>:</strong> Not ideal for <strong>inheritance</strong>; better suited for <strong>type composition</strong>.</p>","children":[],"payload":{"tag":"li","lines":"32,34"}}],"payload":{"tag":"h2","lines":"11,12"}},{"content":"<strong>Solution: <code>interface extends</code></strong>","children":[{"content":"\n<p data-lines=\"38,39\"><strong>Proposal:</strong> Use <code>interfaces</code> and the <code>extends</code> keyword.</p>","children":[],"payload":{"tag":"li","lines":"38,39"}},{"content":"\n<p data-lines=\"39,40\"><strong>Benefit:</strong> Creates cleaner, more extensible code.TypeScript</p>\n<pre data-lines=\"41,57\"><code class=\"language-interface\">  id: string;\n  createdAt: Date;\n}\n\ninterface User extends BaseEntity { // Extends BaseEntity\n  name: string;\n  email: string;\n}\n\ninterface Product extends BaseEntity { // Extends BaseEntity\n  name: string;\n  price: number;\n}\n\n\n</code></pre>","children":[],"payload":{"tag":"li","lines":"39,57"}}],"payload":{"tag":"h2","lines":"36,37"}},{"content":"<strong>Key Differences: <code>type &amp;</code> vs. <code>interface extends</code></strong>","children":[{"content":"<table data-lines=\"61,69\">\n<thead data-lines=\"61,62\">\n<tr data-lines=\"61,62\">\n<th>Characteristic</th>\n<th><code>type &amp;</code> (Intersection)</th>\n<th><code>interface extends</code></th>\n</tr>\n</thead>\n<tbody data-lines=\"63,69\">\n<tr data-lines=\"63,64\">\n<td><strong>Primary Use</strong></td>\n<td>Combines types</td>\n<td>Inherits properties</td>\n</tr>\n<tr data-lines=\"64,65\">\n<td><strong>Purpose</strong></td>\n<td>Composition</td>\n<td>Inheritance</td>\n</tr>\n<tr data-lines=\"65,66\">\n<td><strong>Flexibility</strong></td>\n<td>Combines any type</td>\n<td>Only with other interfaces</td>\n</tr>\n<tr data-lines=\"66,67\">\n<td><strong>Readability</strong></td>\n<td>Less clear for inheritance</td>\n<td>Clearer &amp; more explicit</td>\n</tr>\n<tr data-lines=\"67,68\">\n<td><strong>IDE Support</strong></td>\n<td>Limited refactoring support</td>\n<td>Full (e.g., VS Code)</td>\n</tr>\n<tr data-lines=\"68,69\">\n<td><strong>Declaration Merging</strong></td>\n<td>Not supported</td>\n<td>Supported (reuse names)</td>\n</tr>\n</tbody>\n</table>","children":[],"payload":{"tag":"table","lines":"61,69"}}],"payload":{"tag":"h2","lines":"59,60"}},{"content":"<strong>Impact on Code</strong>","children":[{"content":"<strong>With <code>type &amp;</code>:</strong>","children":[{"content":"<strong>Relationship:</strong> <code>User</code> is a combination of two types.","children":[],"payload":{"tag":"li","lines":"78,79"}},{"content":"<strong>Clarity:</strong> No clear indication <code>User</code> <em>inherits</em> from <code>BaseEntity</code>.","children":[],"payload":{"tag":"li","lines":"79,80"}},{"content":"<strong>Maintainability:</strong> If <code>BaseEntity</code> changes, <code>User</code> updates, but the connection isn&apos;t explicit.","children":[],"payload":{"tag":"li","lines":"80,82"}}],"payload":{"tag":"h3","lines":"76,77"}},{"content":"<strong>With <code>interface extends</code>:</strong>","children":[{"content":"<strong>Relationship:</strong> <code>User</code> explicitly <strong>inherits</strong> from <code>BaseEntity</code>.","children":[],"payload":{"tag":"li","lines":"84,85"}},{"content":"<strong>Clarity:</strong> The relationship is clear and declared.","children":[],"payload":{"tag":"li","lines":"85,86"}},{"content":"<strong>Tooling:</strong> IDEs can show hierarchy, support easy refactoring, and ensure safe extension.","children":[],"payload":{"tag":"li","lines":"86,87"}}],"payload":{"tag":"h3","lines":"82,83"}}],"payload":{"tag":"h2","lines":"74,75"}}],"payload":{"tag":"h1","lines":"0,1"}},null)</script>
+</body>
+</html>

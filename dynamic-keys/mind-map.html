@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.markmap-dark {
+  background: #27272a;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script><script>(()=>{setTimeout(()=>{const{markmap:S,mm:Q}=window,$=new S.Toolbar;$.attach(Q);const I=$.render();I.setAttribute("style","position:absolute;bottom:20px;right:20px"),document.body.append(I)})})()</script><script>((l,U,M,R)=>{const N=l();window.mm=N.Markmap.create("svg#mindmap",(U||N.deriveOptions)(R),M),window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("markmap-dark")})(()=>window.markmap,null,{"content":"Dynamic Keys with Index Signatures and Record Types","children":[{"content":"What&apos;s Explained","children":[{"content":"The Problem","children":[{"content":"<pre data-lines=\"10,16\"><code data-lines=\"10,16\"><span class=\"hljs-type\">const</span> scores = {};\nscores.math = <span class=\"hljs-number\">95</span>;\nscores.english = <span class=\"hljs-number\">90</span>;\n\n</code></pre>","children":[],"payload":{"tag":"pre","lines":"10,16"}},{"content":"<pre data-lines=\"19,23\"><code data-lines=\"19,23\">Property <span class=\"hljs-string\">&apos;math&apos;</span> does not exist on <span class=\"hljs-built_in\">type</span> <span class=\"hljs-string\">&apos;{}&apos;</span>\n\n</code></pre>","children":[],"payload":{"tag":"pre","lines":"19,23"}}],"payload":{"tag":"h3","lines":"6,7"}},{"content":"Proposed Solutions","children":[{"content":"1. \n<p data-lines=\"26,28\"><strong>Index Signature</strong><br>\nWe define a type that allows any string key with a numeric value:</p>\n<pre data-lines=\"29,35\"><code data-lines=\"29,35\"><span class=\"hljs-keyword\">type</span> <span class=\"hljs-title class_\">Scores</span> = {\n  [<span class=\"hljs-attr\">subject</span>: <span class=\"hljs-built_in\">string</span>]: <span class=\"hljs-built_in\">number</span>;\n};\n\n</code></pre>\n<p data-lines=\"36,37\">Or with an interface:</p>\n<pre data-lines=\"38,44\"><code data-lines=\"38,44\"><span class=\"hljs-keyword\">interface</span> <span class=\"hljs-title class_\">Scores</span> {\n  [<span class=\"hljs-attr\">key</span>: <span class=\"hljs-built_in\">string</span>]: <span class=\"hljs-built_in\">number</span>;\n}\n\n</code></pre>","children":[],"payload":{"tag":"li","lines":"26,45","listIndex":1}},{"content":"2. \n<p data-lines=\"45,47\"><strong>Inline Index Signature</strong><br>\nWe can write it directly:</p>\n<pre data-lines=\"48,52\"><code data-lines=\"48,52\"><span class=\"hljs-keyword\">const</span> <span class=\"hljs-attr\">scores</span>: { [<span class=\"hljs-attr\">key</span>: <span class=\"hljs-built_in\">string</span>]: <span class=\"hljs-built_in\">number</span> } = {};\n\n</code></pre>","children":[],"payload":{"tag":"li","lines":"45,53","listIndex":2}},{"content":"3. \n<p data-lines=\"53,55\"><strong>Record Helper Type</strong><br>\nThis is the cleanest and most reusable solution:</p>\n<pre data-lines=\"56,60\"><code data-lines=\"56,60\"><span class=\"hljs-keyword\">const</span> <span class=\"hljs-attr\">scores</span>: <span class=\"hljs-title class_\">Record</span>&lt;<span class=\"hljs-built_in\">string</span>, <span class=\"hljs-built_in\">number</span>&gt; = {};\n\n</code></pre>","children":[{"content":"It&apos;s more readable.","children":[],"payload":{"tag":"li","lines":"61,62"}},{"content":"It&apos;s preferable because it uses <strong>abstraction</strong> instead of low-level syntax.","children":[],"payload":{"tag":"li","lines":"62,64"}}],"payload":{"tag":"li","lines":"53,64","listIndex":3}}],"payload":{"tag":"h3","lines":"24,25"}}],"payload":{"tag":"h2","lines":"4,5"}},{"content":"Conclusion","children":[{"content":"<table data-lines=\"66,71\">\n<thead data-lines=\"66,67\">\n<tr data-lines=\"66,67\">\n<th>Method</th>\n<th>Advantages</th>\n</tr>\n</thead>\n<tbody data-lines=\"68,71\">\n<tr data-lines=\"68,69\">\n<td>Index Signature</td>\n<td>Flexible, but more &quot;low-level&quot;</td>\n</tr>\n<tr data-lines=\"69,70\">\n<td><code>Record&lt;string, number&gt;</code></td>\n<td>Clean, reusable, <strong>preferred</strong></td>\n</tr>\n<tr data-lines=\"70,71\">\n<td>Inline</td>\n<td>Quick, but not reusable</td>\n</tr>\n</tbody>\n</table>","children":[],"payload":{"tag":"table","lines":"66,71"}}],"payload":{"tag":"h2","lines":"64,65"}}],"payload":{"tag":"h1","lines":"0,1"}},null)</script>
+</body>
+</html>

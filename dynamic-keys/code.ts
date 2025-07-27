@@ -8,12 +8,15 @@
 //     [sub : string] : number;
 // }
 
-interface Scores {
-  [sub : string] : number;
+interface ReqScores {
   math: number;
   english: number;
   science : number
 
+}
+
+interface Scores extends ReqScores{
+    [sub : string] : number
 }
 
 const scores: Scores = {

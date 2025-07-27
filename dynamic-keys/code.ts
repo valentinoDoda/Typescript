@@ -2,7 +2,13 @@
 //     [sub : string] : number;
 // }
 
-// const scores: Scores = {};
+
+
+type Scores = {
+    [sub : string] : number;
+}
+
+const scores: Scores = {};
 
 scores.math = 95;
 scores.english = 90;

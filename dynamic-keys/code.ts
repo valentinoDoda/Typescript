@@ -8,7 +8,7 @@
 //     [sub : string] : number;
 // }
 
-// const scores: {[sub : string]: number} = {};
+const scores: Record<string, number> = {};
 
 scores.math = 95;
 scores.english = 90;

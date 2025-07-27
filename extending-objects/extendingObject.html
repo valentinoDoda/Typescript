@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.markmap-dark {
+  background: #27272a;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script><script>(()=>{setTimeout(()=>{const{markmap:S,mm:Q}=window,$=new S.Toolbar;$.attach(Q);const I=$.render();I.setAttribute("style","position:absolute;bottom:20px;right:20px"),document.body.append(I)})})()</script><script>((l,U,M,R)=>{const N=l();window.mm=N.Markmap.create("svg#mindmap",(U||N.deriveOptions)(R),M),window.matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.classList.add("markmap-dark")})(()=>window.markmap,null,{"content":"Extending Objects in TypeScript","children":[{"content":"<strong>Intersection Operator (<code>&amp;</code>)</strong>","children":[{"content":"<strong>Definition:</strong> Creates <strong>intersection types</strong>.","children":[],"payload":{"tag":"li","lines":"6,7"}},{"content":"<strong>Purpose:</strong> Combines properties from multiple types.","children":[],"payload":{"tag":"li","lines":"7,8"}},{"content":"<strong>Meaning:</strong> &quot;<strong>And both</strong>&quot; (vs. <code>|</code> &quot;either/or&quot;).","children":[],"payload":{"tag":"li","lines":"8,9"}},{"content":"<strong>Requirement:</strong> Must satisfy <em>all</em> properties from combined types.","children":[{"content":"<strong>Example:</strong> <code>TypeA &amp; TypeB</code> needs properties from <code>TypeA</code> <strong>and</strong> <code>TypeB</code>.","children":[],"payload":{"tag":"li","lines":"10,12"}}],"payload":{"tag":"li","lines":"9,12"}}],"payload":{"tag":"h2","lines":"4,5"}},{"content":"<strong>Problem: Code Repetition</strong>","children":[{"content":"<strong>Scenario:</strong> Multiple types sharing common properties.","children":[{"content":"<strong>Example:</strong> <code>User</code> and <code>Product</code> both have <code>id</code> and <code>createdAt</code>.","children":[],"payload":{"tag":"li","lines":"17,19"}}],"payload":{"tag":"li","lines":"16,19"}}],"payload":{"tag":"h2","lines":"14,15"}},{"content":"<strong>Solution: Refactoring with Intersection</strong>","children":[{"content":"\n<p data-lines=\"23,24\"><strong>Step 1: Create a <code>BaseEntity</code> (Common Type)</strong></p>","children":[{"content":"\n<p data-lines=\"24,25\">Holds shared properties.</p>","children":[],"payload":{"tag":"li","lines":"24,25"}},{"content":"\n<p data-lines=\"25,26\">**Example:**TypeScript</p>\n<p data-lines=\"27,31\"><code>type BaseEntity = {     id: string;     createdAt: Date;   };</code></p>","children":[],"payload":{"tag":"li","lines":"25,32"}}],"payload":{"tag":"li","lines":"23,32"}},{"content":"\n<p data-lines=\"32,33\"><strong>Step 2: Extend Specific Types</strong></p>","children":[{"content":"\n<p data-lines=\"33,34\">Combine <code>BaseEntity</code> with unique properties using <code>&amp;</code>.</p>","children":[],"payload":{"tag":"li","lines":"33,34"}},{"content":"\n<p data-lines=\"34,35\"><strong>Example: <code>User</code> Refactor</strong>TypeScript</p>\n<p data-lines=\"36,40\"><code>type User = BaseEntity &amp; {     name: string;     email: string;   };</code></p>","children":[],"payload":{"tag":"li","lines":"34,41"}},{"content":"\n<p data-lines=\"41,42\"><strong>Example: <code>Product</code> Refactor</strong>TypeScript</p>\n<p data-lines=\"43,47\"><code>type Product = BaseEntity &amp; {     name: string;     price: number;   };</code></p>","children":[],"payload":{"tag":"li","lines":"41,49"}}],"payload":{"tag":"li","lines":"32,49"}}],"payload":{"tag":"h2","lines":"21,22"}},{"content":"<strong>Advantages</strong>","children":[{"content":"<strong>DRY (Don&apos;t Repeat Yourself):</strong> Eliminates redundant type definitions.","children":[],"payload":{"tag":"li","lines":"53,54"}},{"content":"<strong>Maintenance:</strong> Easier to update common properties (change <code>BaseEntity</code> once).","children":[],"payload":{"tag":"li","lines":"54,55"}},{"content":"<strong>Clarity:</strong> Cleaner, more organized type definitions.","children":[],"payload":{"tag":"li","lines":"55,56"}},{"content":"<strong>Extensibility:</strong> Simplifies adding new shared features.","children":[],"payload":{"tag":"li","lines":"56,57"}}],"payload":{"tag":"h2","lines":"51,52"}}],"payload":{"tag":"h1","lines":"0,1"}},null)</script>
+</body>
+</html>

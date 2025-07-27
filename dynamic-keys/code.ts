@@ -4,9 +4,9 @@
 
 
 
-type Scores = {
-    [sub : string] : number;
-}
+// type Scores = {
+//     [sub : string] : number;
+// }
 
 const scores: Scores = {};
 

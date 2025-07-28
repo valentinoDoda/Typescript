@@ -56,3 +56,18 @@ const configurations: Configurations = {
 
 
 //Your challenge is to determine the correct typing for Configurations that will specify the keys from Environment, and the notAllowed key should still not be allowed.
+
+
+
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+}
+
+const fetchUser = async (): Promise<User> => {
+  const response = await fetch("/api/user");
+  const user = await response.json();
+  return user;
+};

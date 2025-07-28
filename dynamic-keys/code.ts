@@ -110,3 +110,20 @@ addProduct({
 // Your challenge is to find a type that has all of the properties of Product without the id.
 
 // Hint: there's a type helper that will help with this, and it behaves opposite to Pick.
+
+
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  description: string;
+}
+
+const updateProduct = (id: number, productInfo: Omit<Product, "id">) => {
+  // Do something with the productInfo
+};
+
+// Should be able to update individual pieces of information
+updateProduct(1, {
+  name: "Book",
+});

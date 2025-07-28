@@ -65,9 +65,14 @@ interface User {
   email: string;
   role: string;
 }
+type PickUser = Pick<User, "name" | "email">
 
-const fetchUser = async (): Promise<User> => {
+const fetchUser = async (): Promise<PickUser> => {
   const response = await fetch("/api/user");
   const user = await response.json();
   return user;
 };
+
+// Your challenge is to find a way to have the fetchUser function support returning only the name and email fields so the test passes, while keeping the User interface as a source of truth.
+
+// Hint: There are a couple of ways to solve this problem: One way is with interface extends, which we've used earlier. The other way is with a new type helper called Pick.

@@ -137,3 +137,6 @@ updateProduct(1, {
 // Your challenge is to modify the ProductInfo type to reflect these requirements. We want id to remain absent from ProductInfo, but we also want all other properties in ProductInfo to be optional.
 
 // Hint: There is a type helper that makes fields optional.
+
+
+// The oppsite of Partial is Required

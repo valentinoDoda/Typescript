@@ -27,11 +27,29 @@ science : 85
 
 };
 
+type Environment = "development" | "production" | "staging";
 
-//Challenge: Your challenge is to determine the correct typing for this Scores interface that will specify the default keys, as well as allow for any other string key to be added to it.
+type Configurations = unknown;
 
-// Currently Scores uses an interface, but you can change its type if you like.
+const configurations: Configurations = {
+  development: {
+    apiBaseUrl: "http://localhost:8080",
+    timeout: 5000,
+  },
+  production: {
+    apiBaseUrl: "https://api.example.com",
+    timeout: 10000,
+  },
+  staging: {
+    apiBaseUrl: "https://staging.example.com",
+    timeout: 8000,
+  },
+  // @ts-expect-error   // red squiggly line
+  notAllowed: {
+    apiBaseUrl: "https://staging.example.com",
+    timeout: 8000,
+  },
+};
 
-// Once you've made your modifications, you should be able to assign new properties to the scores object, and the @ts-expect-error error will go away because science will be required but missing.
 
-
+//Your challenge is to determine the correct typing for Configurations that will specify the keys from Environment, and the notAllowed key should still not be allowed.

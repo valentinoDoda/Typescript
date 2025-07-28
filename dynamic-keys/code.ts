@@ -86,7 +86,7 @@ interface Product {
   description: string;
 }
 
-const addProduct = (productInfo: Product) => {
+const addProduct = (productInfo: Omit<Product, "id">) => {
 console.log(productInfo)
 };
 

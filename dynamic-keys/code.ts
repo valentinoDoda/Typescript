@@ -119,11 +119,21 @@ interface Product {
   description: string;
 }
 
-const updateProduct = (id: number, productInfo: Omit<Product, "id">) => {
-  // Do something with the productInfo
+const updateProduct = (id: number, productInfo: Partial<Omit<Product, "id">>) => {
+  if(!productInfo){
+    console.log(id, "no info")
+  }
+  Object.keys(productInfo).forEach((key) => {
+    console.log(id , key)
+  });
+  
 };
 
 // Should be able to update individual pieces of information
 updateProduct(1, {
   name: "Book",
 });
+
+// Your challenge is to modify the ProductInfo type to reflect these requirements. We want id to remain absent from ProductInfo, but we also want all other properties in ProductInfo to be optional.
+
+// Hint: There is a type helper that makes fields optional.

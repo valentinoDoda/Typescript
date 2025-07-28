@@ -76,3 +76,37 @@ const fetchUser = async (): Promise<Pick<User, "name" | "email">> => {
 // Your challenge is to find a way to have the fetchUser function support returning only the name and email fields so the test passes, while keeping the User interface as a source of truth.
 
 // Hint: There are a couple of ways to solve this problem: One way is with interface extends, which we've used earlier. The other way is with a new type helper called Pick.
+
+
+
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  description: string;
+}
+
+const addProduct = (productInfo: Product) => {
+console.log(productInfo)
+};
+
+addProduct({
+  name: "Book",
+  price: 12.99,
+  description: "A book about Dragons",
+});
+
+addProduct({
+  // @ts-expect-error
+  id: 1,
+  name: "Book",
+  price: 12.99,
+  description: "A book about Dragons",
+});
+
+
+// The goal is for the addProduct function to use the Product interface, but not allow for an id to be passed in because it will be generated and added later.
+
+// Your challenge is to find a type that has all of the properties of Product without the id.
+
+// Hint: there's a type helper that will help with this, and it behaves opposite to Pick.

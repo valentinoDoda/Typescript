@@ -1,17 +1,15 @@
 // CODE
-
-type SomeTypes = "button" | "submit" | "reset"
-let type:SomeTypes = "reset";
-
-// TESTS
-
 type ButtonAttributes = {
-  type: SomeTypes ;
+  type: "button" | "submit" | "reset";
 };
 
-const buttonAttributes: ButtonAttributes = {
-  type,
+const modifyButton = (attributes: ButtonAttributes) => {};
+
+const buttonAttributes = {
+  type: "button",
 };
+
+modifyButton(buttonAttributes);
 
 
 type User = {
@@ -55,3 +53,6 @@ const handleSearchParams = (search: Readonly<SearchParams>) => {
   // @ts-expect-error Should not be able to modify readonly
   search.order = "asc";
 };
+
+
+

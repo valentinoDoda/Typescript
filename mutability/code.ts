@@ -56,7 +56,7 @@ const handleSearchParams = (search: Readonly<SearchParams>) => {
 
 
 
-function printNames(names: string[]) {
+function printNames(names: readonly string[]) {
   for (const name of names) {
     console.log(name);
   }

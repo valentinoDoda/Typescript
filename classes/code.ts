@@ -29,3 +29,6 @@ this.y = y;
 const canvasNode = new CanvasNode();
 
 canvasNode.move(10, 20);
+
+// Your challenge is to modify the CanvasNode class so that it can receive
+//  an optional initial position. This will require you to add a constructor that can accept an argument.

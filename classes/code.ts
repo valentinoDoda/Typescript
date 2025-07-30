@@ -76,3 +76,38 @@ class CanvasNode {
 // Your task is to resolve this issue by blocking awareness and access to x and y from outside the CanvasNode class.
 
 // There are two potential approaches for this: one that's JavaScript-first and one that's TypeScript-first. The JavaScript-first approach is preferred, but either solution is acceptable. See if you can find both!
+
+
+
+interface ShapeOptions {
+  x: number;
+  y: number;
+}
+
+type IShape = {
+  position: { x: number; y: number };
+  move: (deltaX: number, deltaY: number) => void;
+};
+
+// How do we ensure our Shape class matches IShape?
+class Shape implements IShape{
+  #x: number;
+  #y: number;
+
+  constructor(initial?: ShapeOptions) {
+    this.#x = initial?.x ?? 0;
+    this.#y = initial?.y ?? 0;
+  }
+
+  get position() {
+    return {
+      x: this.#x,
+      y: this.#y,
+    };
+  }
+
+  move(x: number, y: number) {
+    this.#x = x;
+    this.#y = y;
+  }
+}

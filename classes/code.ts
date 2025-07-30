@@ -69,3 +69,6 @@ class CanvasNode {
 
 // Your task is to revise the code for CanvasNode to include a getter for position. This getter should return an object with x and y properties that represent the current position of the CanvasNode object.
 
+// Your task is to resolve this issue by blocking awareness and access to x and y from outside the CanvasNode class.
+
+// There are two potential approaches for this: one that's JavaScript-first and one that's TypeScript-first. The JavaScript-first approach is preferred, but either solution is acceptable. See if you can find both!

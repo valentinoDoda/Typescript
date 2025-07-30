@@ -58,3 +58,7 @@ class CanvasNode {
     this.y = y;
   }
 }
+
+
+// Your task is to revise the code for CanvasNode to include a getter for position. This getter should return an object with x and y properties that represent the current position of the CanvasNode object.
+

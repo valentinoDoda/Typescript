@@ -111,3 +111,23 @@ class Shape implements IShape{
     this.#y = y;
   }
 }
+
+
+function add() {
+  return this.x + this.y;
+}
+
+const setValues(x: number, y: number) => {
+  this.x = x;
+  this.y = y;
+};
+
+const calculator = {
+    x: 0,
+    y: 0,
+
+    add,
+    setValues,
+  };
+
+  calculator.setValues(1, 2);

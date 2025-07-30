@@ -19,7 +19,13 @@
 class CanvasNode {
   x = 0;
   y = 0;
+    move(x: number, y: number){
+this.x = x;
+this.y = y;
+}
 }
 
 
-  canvasNode.move(10, 20);
+const canvasNode = new CanvasNode();
+
+canvasNode.move(10, 20);

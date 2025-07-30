@@ -45,24 +45,24 @@
 //  an optional initial position. This will require you to add a constructor that can accept an argument.
 
 class CanvasNode {
-  x: number;
-  y: number;
+  #x: number;
+  #y: number;
 
   constructor(position?: { x: number; y: number }) {
-    this.x = position?.x ?? 0;
-    this.y = position?.y ?? 0;
+    this.#x = position?.x ?? 0;
+    this.#y = position?.y ?? 0;
   }
 
   get position(){
     return{
-        x : this.x,
-        y :this.y
+        x : this.#x,
+        y :this.#y
     }
   }
 
   move(x: number, y: number) {
-    this.x = x;
-    this.y = y;
+    this.#x = x;
+    this.#y = y;
   }
 }
 

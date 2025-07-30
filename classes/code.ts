@@ -16,9 +16,20 @@
 //   canvasNode.y = 20;
 
 
+type Canvas = {
+    x: number,
+    y:number 
+}
+
 class CanvasNode {
   x = 0;
   y = 0;
+  constructor( obj?:Canvas){
+    if(obj){
+        this.x = obj.x;
+        this.y = obj.y;
+    }
+  }
     move(x: number, y: number){
 this.x = x;
 this.y = y;

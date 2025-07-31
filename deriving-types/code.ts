@@ -99,3 +99,13 @@ const makeQuery = (
 ) => {};
 
 type MakeQueryParameters = Parameters<typeof makeQuery>;
+
+const createUser = (id: string) => {
+  return {
+    id,
+    name: "John Doe",
+    email: "example@email.com",
+  };
+};
+
+type User = unknown;

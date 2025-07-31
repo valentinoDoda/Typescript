@@ -108,4 +108,15 @@ const createUser = (id: string) => {
   };
 };
 
-type User = ReturnType<typeof createUser>;
+//type User = ReturnType<typeof createUser>;
+
+
+const fetchUser = async (id: string) => {
+  return {
+    id,
+    name: "John Doe",
+    email: "example@email.com",
+  };
+};
+
+type User = ReturnType<typeof fetchUser>;

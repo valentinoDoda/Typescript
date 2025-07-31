@@ -86,3 +86,16 @@ const myApp = (logger : Logger) => {
 }
 
 myApp(Logger)
+
+const makeQuery = (
+  url: string,
+  opts?: {
+    method?: string;
+    headers?: {
+      [key: string]: string;
+    };
+    body?: string;
+  },
+) => {};
+
+type MakeQueryParameters = typeof makeQuery;

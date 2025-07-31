@@ -61,6 +61,7 @@
 //     y: node.y,
 //   };
 // };
+import { Logger } from "./exportTypesExample.ts";
 class CanvasNode {
 	x: number;
 	y: number;
@@ -75,4 +76,11 @@ class CanvasNode {
 		this.y += y;
 		return this;
 	}
+}
+
+const myApp = (logger : Logger) => {
+    logger.log("Hello");
+	logger.info("Hello");
+	logger.warn("Hello");
+	logger.error("Hello");
 }

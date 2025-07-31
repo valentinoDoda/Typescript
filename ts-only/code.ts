@@ -1,11 +1,11 @@
 enum LogLevel  {
-  DEBUG,
-  INFO,
-  WARN,
-  ERROR
+  DEBUG = 0,
+  INFO = 1,
+  WARN = 2,
+  ERROR = 3
 };
 
-function log(opts: { globalLogLevel: number; level: number; message: string }) {
+function log(opts: { globalLogLevel: LogLevel; level: number; message: string }) {
   if (opts.level >= opts.globalLogLevel) {
     console.log(opts.message);
   }
@@ -25,7 +25,6 @@ log({
 
   log({
     globalLogLevel: LogLevel.INFO,
-    // @ts-expect-error
-    level: 123,
+    level: LogLevel.INFO,
     message: "Hello!",
   });

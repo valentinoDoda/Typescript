@@ -24,7 +24,6 @@ log({
 });
 log({
     globalLogLevel: LogLevel.INFO,
-    // @ts-expect-error
-    level: 123,
+    level: LogLevel.INFO,
     message: "Hello!",
 });

@@ -61,3 +61,18 @@
 //     y: node.y,
 //   };
 // };
+class CanvasNode {
+	x: number;
+	y: number;
+
+	constructor(x: number, y: number) {
+		this.x = x;
+		this.y = y;
+	}
+
+	move(x: number, y: number): this {
+		this.x += x;
+		this.y += y;
+		return this;
+	}
+}

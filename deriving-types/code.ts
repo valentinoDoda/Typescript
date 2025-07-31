@@ -84,3 +84,5 @@ const myApp = (logger : Logger) => {
 	logger.warn("Hello");
 	logger.error("Hello");
 }
+
+myApp(Logger)

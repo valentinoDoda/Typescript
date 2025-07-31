@@ -41,4 +41,6 @@ const configurations = {
   },
 };
 
-type Environment = keyof typeof configurations;
+type Configuration = typeof configurations
+
+type Environment = keyof Configuration;

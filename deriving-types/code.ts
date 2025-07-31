@@ -55,7 +55,7 @@ class CanvasNode {
   }
 }
 
-const positionFromCanvasNode = (node) => {
+const positionFromCanvasNode = (node: CanvasNode) => {
   return {
     x: node.x,
     y: node.y,

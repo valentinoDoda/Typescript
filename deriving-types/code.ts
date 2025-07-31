@@ -44,3 +44,20 @@ const configurations = {
 type Configuration = typeof configurations
 
 type Environment = keyof Configuration;
+
+class CanvasNode {
+  x = 0;
+  y = 0;
+
+  move(x: number, y: number) {
+    this.x = x;
+    this.y = y;
+  }
+}
+
+const positionFromCanvasNode = (node) => {
+  return {
+    x: node.x,
+    y: node.y,
+  };
+};

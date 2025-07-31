@@ -98,4 +98,4 @@ const makeQuery = (
   },
 ) => {};
 
-type MakeQueryParameters = typeof makeQuery;
+type MakeQueryParameters = Parameters<typeof makeQuery>;

@@ -18,5 +18,10 @@ export const programModeEnumMap = {
 
 type ProgramModeMap = typeof programModeEnumMap;
 
-// How do we make sure Group stays in sync with programModeEnumMap?
-type Group = ProgramModeMap["GROUP"];
+// How do we make sure PlannedPrograms stays in sync with programModeEnumMap?
+type PlannedPrograms = unknown;
+
+type test = Expect<
+  Equal<PlannedPrograms, "planned1on1" | "plannedSelfDirected">
+>;
+

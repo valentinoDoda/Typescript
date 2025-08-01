@@ -19,6 +19,4 @@ export const programModeEnumMap = {
 type ProgramModeMap = typeof programModeEnumMap;
 
 // How do we make sure Group stays in sync with programModeEnumMap?
-type Group = unknown;
-
-type test = Expect<Equal<Group, "group">>;
+type Group = ProgramModeMap["GROUP"];

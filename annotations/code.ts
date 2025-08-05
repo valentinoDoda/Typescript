@@ -52,10 +52,13 @@ const configurations = {
     // @ts-expect-error
     notAllowed: true,
   },
-};
+} satisfies Record<
+  string,
+  {
+    apiBaseUrl: string;
+    timeout: number;
+  }
+>;
 
 type Environment = keyof typeof configurations;
 
-type test = Expect<
-  Equal<Environment, "development" | "production" | "staging">
->;

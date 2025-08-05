@@ -5,13 +5,12 @@ const isProblemOrSolution = (filename: string): boolean => {
 
   const extension = splitFilename[finalIndex];
 
-  const isProblem= extension === "problem";
+  const isProblem = extension === "problem";
 
   const isSolution = extension === "solution";
 
   return isProblem || isSolution;
 };
-
 
 const handleFormData = (e: SubmitEvent) => {
   e.preventDefault();
@@ -28,11 +27,11 @@ type Color =
       b: number;
     };
 
-const config: Record<string, Color> = {
+const config = {
   foreground: { r: 255, g: 255, b: 255 },
   background: { r: 0, g: 0, b: 0 },
   border: "transparent",
-};
+} satisfies Record<string, Color>;
 
 config.border.toUpperCase();
 

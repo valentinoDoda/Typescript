@@ -11,3 +11,11 @@ const isProblemOrSolution = (filename: string): boolean => {
 
   return isProblem || isSolution;
 };
+
+
+const handleFormData = (e: SubmitEvent) => {
+  e.preventDefault();
+  const data = new FormData(e.target);
+  const value = Object.fromEntries(data.entries());
+  return value;
+};

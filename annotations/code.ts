@@ -106,3 +106,23 @@ const menuConfig = {
 // 3
 
 const element = document.getElementById("app") as HTMLElement;
+
+const routes = {
+  "/": {
+    component: "Home",
+  },
+  "/about": {
+    component: "About",
+    // @ts-expect-error
+    search: "?foo=bar",
+  },
+};
+
+// @ts-expect-error
+routes["/"].component = "About";
+
+
+
+// Your task is to update the routes object typing so that all errors are resolved.
+
+// This will require you to use satisfies as well as another annotation that ensures the object is deeply read-only.

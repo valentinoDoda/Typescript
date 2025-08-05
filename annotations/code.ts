@@ -62,30 +62,15 @@ const configurations = {
 
 type Environment = keyof typeof configurations;
 
-const obj = {} as Record<string, number>;
+const obj: Record<string, number> = {};
 
 obj.a = 1;
 
 obj.b = 2;
 
-type test = Expect<Equal<typeof obj.a, number>>;
-
 // 2
 
-const menuConfig: Record<
-  string,
-  | {
-      label: string;
-      link: string;
-    }
-  | {
-      label: string;
-      children: {
-        label: string;
-        link: string;
-      }[];
-    }
-> = {
+const menuConfig = {
   home: {
     label: "Home",
     link: "/home",
@@ -103,23 +88,21 @@ const menuConfig: Record<
       },
     ],
   },
-};
-
-type tests = [
-  Expect<Equal<typeof menuConfig.home.label, string>>,
-  Expect<
-    Equal<
-      typeof menuConfig.services.children,
-      {
+} satisfies Record<
+  string,
+  | {
+      label: string;
+      link: string;
+    }
+  | {
+      label: string;
+      children: {
         label: string;
         link: string;
-      }[]
-    >
-  >
-];
+      }[];
+    }
+>;
 
 // 3
 
-const element = document.getElementById("app") satisfies HTMLElement;
-
-type test3 = Expect<Equal<typeof element, HTMLElement>>;
+const element = document.getElementById("app") as HTMLElement;

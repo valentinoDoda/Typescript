@@ -116,7 +116,7 @@ const routes = {
     // @ts-expect-error
     search: "?foo=bar",
   },
-};
+}as const satisfies Record<string, {component : string}> ;
 
 // @ts-expect-error
 routes["/"].component = "About";

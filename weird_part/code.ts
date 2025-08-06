@@ -9,3 +9,7 @@ acceptAnythingExceptNullOrUndefined([]);
 acceptAnythingExceptNullOrUndefined(() => {});
 acceptAnythingExceptNullOrUndefined(/foo/);
 acceptAnythingExceptNullOrUndefined(new Error("foo"));
+
+const acceptOnlyEmptyObject = (input: {}) => {};
+
+acceptOnlyEmptyObject({});

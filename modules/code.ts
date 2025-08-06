@@ -1,5 +1,2 @@
-import { myModule } from "./module-1";
-
-const person : myModule = {
-    name : 'valentin'
-}
+import {person} from "./jsFiles/code"
+console.log(person.name)

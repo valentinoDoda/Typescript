@@ -22,4 +22,4 @@ type PostDataShape = DataShape<{
 }>;
 
 
-type PromiseFunc = (input: any) => Promise<any>;
+type PromiseFunc<InputType, PromiseType> = (input: InputType) => Promise<PromiseType>;

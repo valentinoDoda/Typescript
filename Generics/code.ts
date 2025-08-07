@@ -68,3 +68,11 @@ type BadExample = Result<
   // @ts-expect-error Should be an object with a message property
   string
 >;
+
+type StrictOmit<T, K> = Omit<T, K>;
+
+type ShouldFail = StrictOmit<
+  { a: string },
+  // @ts-expect-error
+  "b"
+>;

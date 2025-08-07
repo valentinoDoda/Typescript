@@ -105,7 +105,7 @@ interface Attributes {
 }
 
 type AttributeGetters = {
-    [K in keyof Attributes] : ()=> Attributes[K]
+    [K in keyof Attributes as `get${Capitalize<keyof Attributes>}`] : ()=> Attributes[K]
 };
 
 // Your challenge is to adjust the AttributeGetters type to remap the keys as specified.

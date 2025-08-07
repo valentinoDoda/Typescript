@@ -20,3 +20,6 @@ type PostDataShape = DataShape<{
   title: string;
   body: string;
 }>;
+
+
+type PromiseFunc = (input: any) => Promise<any>;

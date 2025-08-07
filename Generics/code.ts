@@ -25,7 +25,7 @@ type PromiseFunc<InputType, PromiseType> = (
   input: InputType
 ) => Promise<PromiseType>;
 
-type Result<TResult, TError> =
+type Result<TResult, TError = Error> =
   | {
       success: true;
       data: TResult;

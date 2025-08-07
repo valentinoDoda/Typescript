@@ -77,6 +77,8 @@ type ShouldFail = StrictOmit<
   "b"
 >;
 
+
+type AbsoluteRoute = `/${string}`
 const goToRoute = (route: AbsoluteRoute) => {
   // ...
 };

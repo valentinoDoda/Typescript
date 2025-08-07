@@ -96,7 +96,7 @@ type BreadType = "rye" | "brown" | "white";
 
 type Filling = "cheese" | "ham" | "salami";
 
-type Sandwich = unknown;
+type Sandwich = `${BreadType} sandwich with ${Filling}`;
 
 type tests = [
   Expect<

@@ -69,7 +69,7 @@ type BadExample = Result<
   string
 >;
 
-type StrictOmit<T, K> = Omit<T, K>;
+type StrictOmit<T, K extends keyof T > = Omit<T, K>;
 
 type ShouldFail = StrictOmit<
   { a: string },

@@ -53,7 +53,7 @@ type PromiseFunc<InputType, PromiseType> = (
 
 // const result = createRandomNumber();
 
-type Result<TResult, TError = Error> =
+type Result<TResult, TError extends {message : string} = Error> =
   | {
       success: true;
       data: TResult;

@@ -107,3 +107,9 @@ interface Attributes {
 type AttributeGetters = {
     [K in keyof Attributes] : ()=> Attributes[K]
 };
+
+// Your challenge is to adjust the AttributeGetters type to remap the keys as specified.
+
+// To do this, you will need to do some key remapping with the as keyword along with template literal types, as well as the Capitalize helper type.
+
+// Hint: All of this will take place where the AttributeGetters currently has [K in keyof Attributes].

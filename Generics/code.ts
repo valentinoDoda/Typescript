@@ -98,3 +98,23 @@ type Filling = "cheese" | "ham" | "salami";
 
 type Sandwich = `${BreadType} sandwich with ${Filling}`;
 
+interface Attributes {
+  firstName: string;
+  lastName: string;
+  age: number;
+}
+
+type AttributeGetters = unknown;
+
+type tests = [
+  Expect<
+    Equal<
+      AttributeGetters,
+      {
+        firstName: () => string;
+        lastName: () => string;
+        age: () => number;
+      }
+    >
+  >,
+];

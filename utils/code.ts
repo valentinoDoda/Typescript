@@ -45,7 +45,7 @@ const UNKNOWN_CODE = 8000;
 
 const addCodeToError = <
   TError extends {
-    message : string;
+    message: string;
     code?: number;
   }
 >(
@@ -55,4 +55,18 @@ const addCodeToError = <
     ...error,
     code: error.code ?? UNKNOWN_CODE,
   };
+};
+
+type PromiseFunc = () => Promise<any>;
+
+const safeFunction = (func: PromiseFunc) => async () => {
+  try {
+    const result = await func();
+    return result;
+  } catch (e) {
+    if (e instanceof Error) {
+      return e;
+    }
+    throw e;
+  }
 };

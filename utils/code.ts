@@ -33,7 +33,7 @@ objMap.set(
   { b: 123 }
 );
 
-const uniqueArray = (arr: any[]) => {
+const uniqueArray = <T>(arr: T[]) => {
   return Array.from(new Set(arr));
 };
 

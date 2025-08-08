@@ -40,3 +40,12 @@ const uniqueArray = <T>(arr: T[]) => {
 const result = uniqueArray([1, 1, 2, 3, 4, 4, 5]);
 
 const result2 = uniqueArray(["a", "b", "b", "c", "c", "c"]);
+
+const UNKNOWN_CODE = 8000;
+
+const addCodeToError = <TError>(error: TError) => {
+  return {
+    ...error,
+    code: error.code ?? UNKNOWN_CODE,
+  };
+};

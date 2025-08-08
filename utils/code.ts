@@ -2,8 +2,8 @@
 
 // CODE
 
-const createStringMap = () => {
-  return new Map();
+const createStringMap = <T>() => {
+  return new Map<string, T>();
 };
 
 // TESTS

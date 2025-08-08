@@ -2,7 +2,7 @@
 
 // CODE
 
-const createStringMap = <T>() => {
+const createStringMap = <T = string>() => {
   return new Map<string, T>();
 };
 

@@ -1,5 +1,3 @@
-
-
 // CODE
 
 const createStringMap = <T = string>() => {
@@ -13,7 +11,7 @@ stringMap.set("foo", "bar");
 stringMap.set(
   "bar",
   // @ts-expect-error
-  123,
+  123
 );
 
 const numberMap = createStringMap<number>();
@@ -22,7 +20,7 @@ numberMap.set("foo", 123);
 numberMap.set(
   "bar",
   // @ts-expect-error
-  true,
+  true
 );
 
 const objMap = createStringMap<{ a: number }>();
@@ -32,6 +30,13 @@ objMap.set("foo", { a: 123 });
 objMap.set(
   "bar",
   // @ts-expect-error
-  { b: 123 },
+  { b: 123 }
 );
 
+const uniqueArray = (arr: any[]) => {
+  return Array.from(new Set(arr));
+};
+
+const result = uniqueArray([1, 1, 2, 3, 4, 4, 5]);
+
+const result2 = uniqueArray(["a", "b", "b", "c", "c", "c"]);

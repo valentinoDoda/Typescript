@@ -57,9 +57,9 @@ const addCodeToError = <
   };
 };
 
-type PromiseFunc = () => Promise<any>;
+type PromiseFunc2<TR> = () => Promise<TR>;
 
-const safeFunction = (func: PromiseFunc) => async () => {
+const safeFunction = <TR>(func: PromiseFunc2<TR>) => async () => {
   try {
     const result = await func();
     return result;

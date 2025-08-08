@@ -6,7 +6,15 @@ const createStringMap = <T>() => {
   return new Map<string, T>();
 };
 
-// TESTS
+const stringMap = createStringMap();
+
+stringMap.set("foo", "bar");
+
+stringMap.set(
+  "bar",
+  // @ts-expect-error
+  123,
+);
 
 const numberMap = createStringMap<number>();
 
@@ -26,6 +34,4 @@ objMap.set(
   // @ts-expect-error
   { b: 123 },
 );
-
-const unknownMap = createStringMap();
 
